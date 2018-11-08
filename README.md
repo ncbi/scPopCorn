@@ -7,7 +7,7 @@ $ pip install popcom
 ```
 
 # Input File Format
-popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the format look like the following. Example data file can be found in the ```data``` folder
+popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the format look like the following. Example data file can be found in the ```data``` folder.
 
 | Cell1ID | Cell2ID | Cell3ID | Cell4ID | Cell5ID  | ... |
 |----|--------|--------|--------|---------|-----|
