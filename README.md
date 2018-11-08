@@ -6,4 +6,4 @@ A python tool to do comparative analysis of mulitple single cell datasets.
 $ pip install popcom
 ```
 
-# Example
+# Input Files
