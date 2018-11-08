@@ -16,11 +16,7 @@ popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the form
 | Gene3 | 0 | 0| 0 | 0  | ... |
 |...    |...|...|...|...|...|
 
-# Example
-Upzip ```dataset.zip``` file in ```data``` folder and run 
-```
-$ python test.py
-```
+
 
 # How to use
 
@@ -99,4 +95,9 @@ CResult = MSingle.NKcut_Rounding(3.0,20)
 ```
 "3.0" is the same as "3.0" in previous command; "20" is the actually number of sub-populations you want to identify. CResult[1] incldes the sub-population id for each cell. 
 
+# Example
+Upzip ```dataset.zip``` file in ```data``` folder and run 
+```
+$ python test.py
+```
 
