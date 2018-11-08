@@ -16,6 +16,12 @@ popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the form
 | Gene3 | 0 | 0| 0 | 0  | ... |
 |...    |...|...|...|...|...|
 
+# Example
+Upzip ```dataset.zip``` file in ```data``` folder and run 
+```
+$ python test.py
+```
+
 # How to use
 
 ## import popcom package
