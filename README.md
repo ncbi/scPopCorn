@@ -14,4 +14,5 @@ popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the form
 | Gene1 | 12 | 0 | 0 | 0 | ... |
 | Gene2 | 125 | 0 | 298 | 0  | ... |
 | Gene3 | 0 | 0| 0 | 0  | ... |
+|...    |...|...|...|...|...|
 
