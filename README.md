@@ -90,4 +90,6 @@ MSingle.SDP_NKcut(15, 3.0)
 ```
 CResult = MSingle.NKcut_Rounding(3.0,20)
 ```
-"3.0" is the same as "3.0" in previous command; "20" is the actually number of 
+"3.0" is the same as "3.0" in previous command; "20" is the actually number of sub-populations you want to identify. CResult[1] incldes the sub-population id for each cell. 
+
+
