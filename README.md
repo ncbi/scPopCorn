@@ -69,10 +69,11 @@ Test4.Log1P()
 MSingle = MergeSingleCell(Test1, Test2, Test3, Test4)
 ```
 
-## Define supercells for each data sets(in this example, we define 200 supercells for each dataset)
+## Define supercells for each data sets
 ```
 MSingle.MultiDefineSuperCell(200,200,200,200)
 ```
+In this example, we define 200 supercells for each dataset.
 
 ## Compute co-membership graph within each dataset and similarity matrix across dataset
 ```
