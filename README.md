@@ -45,7 +45,7 @@ Test4 = SingleCellData()
 Test4.ReadData_SeuratFormat(File4)
 ```
 
-## Normlize counts data, find highly vaiable genes, and loglize data
+## Normlize counts data, find highly vaiable genes, and natural logarithm of one plus of the counts data
 ```
 Test1.Normalized_per_Cell()
 Test1.FindHVG()
@@ -68,3 +68,10 @@ Test4.Log1P()
 ```
 MSingle = MergeSingleCell(Test1, Test2, Test3, Test4)
 ```
+
+## Define supercells for each data sets(in this example, we define 200 supercells for each dataset)
+```
+MSingle.MultiDefineSuperCell(200,200,200,200)
+```
+
+## Find 
