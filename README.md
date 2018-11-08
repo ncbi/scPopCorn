@@ -20,8 +20,8 @@ popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the form
 
 ## import popcom package
 ```
-from PopCom import MergeSingleCell
-from PopCom import SingleCellData
+from popcom import MergeSingleCell
+from popcom import SingleCellData
 ```
 
 ## read in RNA-seq data
@@ -31,17 +31,40 @@ Test1 = SingleCellData()
 Test1.ReadData_SeuratFormat(File1)
 
 
-File3 = "../../Data/Human&Mouse_Kidney/GSE107585_Mouse_kidney_single_cell_seurat_data2.txt"
+File2 = "../../Data/Human&Mouse_Kidney/GSE107585_Mouse_kidney_single_cell_seurat_data2.txt"
 Test2 = SingleCellData()
-Test2.ReadData_SeuratFormat(File3)
+Test2.ReadData_SeuratFormat(File2)
 
-File5 = "../../Data/Human&Mouse_Kidney/GSE107585_Mouse_kidney_single_cell_seurat_data3.txt"
+File3 = "../../Data/Human&Mouse_Kidney/GSE107585_Mouse_kidney_single_cell_seurat_data3.txt"
 Test3 = SingleCellData()
-Test3.ReadData_SeuratFormat(File5)
+Test3.ReadData_SeuratFormat(File3)
 
 
-File5 = "../../Data/Human&Mouse_Kidney/GSE107585_Mouse_kidney_single_cell_seurat_data4.txt"
+File4 = "../../Data/Human&Mouse_Kidney/GSE107585_Mouse_kidney_single_cell_seurat_data4.txt"
 Test4 = SingleCellData()
-Test4.ReadData_SeuratFormat(File5)
+Test4.ReadData_SeuratFormat(File4)
+```
 
+## Normlize counts data, find highly vaiable genes, and loglize data
+```
+Test1.Normalized_per_Cell()
+Test1.FindHVG()
+Test1.Log1P()
+
+Test2.Normalized_per_Cell()
+Test2.FindHVG()
+Test2.Log1P()
+
+Test3.Normalized_per_Cell()
+Test3.FindHVG()
+Test3.Log1P()
+
+Test4.Normalized_per_Cell()
+Test4.FindHVG()
+Test4.Log1P()
+```
+
+## Combine data 
+```
+MSingle = MergeSingleCell(Test1, Test2, Test3, Test4)
 ```
