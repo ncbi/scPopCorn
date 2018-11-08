@@ -81,7 +81,13 @@ MSingle.ConstructBetweenSimiarlityMat_SuperCellLevel()
 ```
 
 ## Run joint partition 
-"15" is roughly the number of sub-population you want to find and it is just an approxiamtion; "3.0" is how much popcom focus mapping across datasets
 ```
 MSingle.SDP_NKcut(15, 3.0)
 ```
+"15" is roughly the number of sub-population you want to find and it is just an approxiamtion; "3.0" is how much popcom focus mapping across datasets.
+
+## Rounding the results
+```
+CResult = MSingle.NKcut_Rounding(3.0,20)
+```
+"3.0" is the same as "3.0" in previous command; "20" is the actually number of 
