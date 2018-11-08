@@ -100,4 +100,5 @@ Upzip ```dataset.zip``` file in ```data``` folder and run
 ```
 $ python test.py
 ```
+The example reproduces the results on mouse kidney single cell data. 
 
