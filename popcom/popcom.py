@@ -985,3 +985,15 @@ class MergeSingleCell:
         for j in range(NumDataset):
             print("Dataset %i: Accuracy %f" % (j, AvgAccj[j]/NumCDataj[j]))
         print("Common Cluster Accuracy %f" % (AvgAccComC/NumComC))
+
+    def OutputResult(self, Filename):
+        CResult = self.ClusterResult
+        print(CResult)
+        fh = open(Filename,'w')
+        for i in range(self.NumDataSets):
+            Clabel = MSingle.MSinglCell[i].SuperCellLabe_CellLevelLabel(CResult[self.AccNumSCell[i]:self.AccNumSCell[i+1]])
+            print(len(Clabel))
+            CID = list(self.MSinglCell[i].scRNAseq_Counts.obs['Cell_ID'])
+            for j in range(len(CID)):
+                fh.write("%s\t%d\n" % (CID[j], Clabel[j]))
+        fh.close()
