@@ -526,8 +526,11 @@ class SingleCellData():
         PRVecDen = np.zeros((self.NumSuperCell,self.NumSuperCell))
         for i in range(self.NumSuperCell):
             #print("node %d" % (i))
-            PRVec = PRTest.ApproximatePR_Vertex(i)
-            PRVecDen[:,i], LocalDen[i] = PRTest.Sweep_Density(PRVec, np.count_nonzero(PRVec))
+            if np.count_nonzero(SimMat[i,:]) < 2:
+                PRVecDen[i,i] = 1.
+            else:
+                PRVec = PRTest.ApproximatePR_Vertex(i)
+                PRVecDen[:,i], LocalDen[i] = PRTest.Sweep_Density(PRVec, np.count_nonzero(PRVec))
         self.DenMat = np.zeros((self.NumSuperCell,self.NumSuperCell))
         for i in range(self.NumSuperCell):
             self.DenMat = self.DenMat + np.outer(PRVecDen[:,i], PRVecDen[:,i])
