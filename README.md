@@ -95,6 +95,12 @@ CResult = MSingle.NKcut_Rounding(3.0,20)
 ```
 "3.0" is the same as "3.0" in previous command; "20" is the actually number of sub-populations you want to identify. CResult[1] incldes the sub-population id for each cell. 
 
+## Ouptput the results
+```
+MSingle.OutputResult("TestOut.txt")
+```
+output results in the "TestOut.txt" file.
+
 # Example
 Upzip ```dataset.zip``` file in ```data``` folder and run 
 ```
