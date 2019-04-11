@@ -3,7 +3,7 @@ A python tool to do comparative analysis of mulitple single cell datasets.
 
 # Installation
 ```bash
-$ pip install PopCorn
+$ pip install biopopcorn
 ```
 
 # Input scRNA-seq Data File Format
@@ -30,8 +30,8 @@ The gourd truth labels for cells in each dataset can also be input. The format i
 
 ## import popcom package
 ```
-from PopCorn import MergeSingleCell
-from PopCorn import SingleCellData
+from biopopcorn import MergeSingleCell
+from biopopcorn import SingleCellData
 ```
 
 ## read in RNA-seq data
