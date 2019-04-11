@@ -2,13 +2,8 @@
 A python tool to do comparative analysis of mulitple single cell datasets.
 
 
-# Install
-```bash
-$ pip install popcom
-```
-
-# Input File Format
-popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the format look like the following. Example data file can be found in the ```data``` folder.
+# Input scRNA-seq Data File Format
+PopCorn needs multiple single cell RNA-seq dataset as inputs. Bascially, the format look like the following. Example data file can be found in the ```Data``` folder.
 
 | Cell1ID | Cell2ID | Cell3ID | Cell4ID | Cell5ID  | ... |
 |----|--------|--------|--------|---------|-----|
@@ -17,6 +12,14 @@ popcom needs multiple single cell RNA-seq dataset as inputs. Bascially, the form
 | Gene3 | 0 | 0| 0 | 0  | ... |
 |...    |...|...|...|...|...|
 
+The gourd truth labels for cells in each dataset can be input. The format is as following
+
+| Cell1ID | Lable1 |
+|----|--------|
+| Cell1ID | Lable2 |
+| Cell1ID | Lable3 |
+| Cell1ID | Lable4 |
+|...    |..
 
 
 # How to use
