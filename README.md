@@ -1,6 +1,10 @@
 # PopCorn
 A python tool to do comparative analysis of mulitple single cell datasets.
 
+# Installation
+```bash
+$ pip install PopCorn
+```
 
 # Input scRNA-seq Data File Format
 PopCorn needs multiple single cell RNA-seq dataset as inputs. Bascially, the format look like the following. Example data file can be found in the ```Data``` folder.
@@ -12,7 +16,7 @@ PopCorn needs multiple single cell RNA-seq dataset as inputs. Bascially, the for
 | Gene3 | 0 | 0| 0 | 0  | ... |
 |...    |...|...|...|...|...|
 
-The gourd truth labels for cells in each dataset can be input. The format is as following
+The gourd truth labels for cells in each dataset can also be input. The format is as following
 
 | Cell1ID | Lable1 |
 |----|--------|
