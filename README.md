@@ -30,8 +30,8 @@ The gourd truth labels for cells in each dataset can also be input. The format i
 
 ## import popcom package
 ```
-from popcom import MergeSingleCell
-from popcom import SingleCellData
+from PopCorn import MergeSingleCell
+from PopCorn import SingleCellData
 ```
 
 ## read in RNA-seq data
