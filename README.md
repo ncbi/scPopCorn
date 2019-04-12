@@ -1,5 +1,5 @@
 # scPopCorn
-A python tool to do comparative analysis of mulitple single cell  datasets.
+A python tool to do comparative analysis of mulitple single cell RNA-seq datasets.
 
 # 1. Installation
 ```bash
