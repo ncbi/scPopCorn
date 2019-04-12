@@ -1153,7 +1153,7 @@ class MergeSingleCell:
         print(CResult)
         fh = open(Filename,'w')
         for i in range(self.NumDataSets):
-            Clabel = MSingle.MSinglCell[i].SuperCellLabe_CellLevelLabel(CResult[self.AccNumSCell[i]:self.AccNumSCell[i+1]])
+            Clabel = self.MSinglCell[i].SuperCellLabe_CellLevelLabel(CResult[self.AccNumSCell[i]:self.AccNumSCell[i+1]])
             print(len(Clabel))
             CID = list(self.MSinglCell[i].scRNAseq_Counts.obs['Cell_ID'])
             for j in range(len(CID)):
