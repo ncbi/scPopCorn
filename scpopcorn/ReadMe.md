@@ -1,1 +1,1 @@
-PopCorn.py contains all the source codes.
+scpopcorn.py contains all the source codes.
