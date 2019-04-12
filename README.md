@@ -28,7 +28,7 @@ The gourd truth labels for cells in each dataset can also be input. The format i
 
 # How to use
 
-## import popcom package
+## import scpopcorn package
 ```
 from scpopcorn import MergeSingleCell
 from scpopcorn import SingleCellData
@@ -45,7 +45,7 @@ Test2 = SingleCellData()
 Test2.ReadData_SeuratFormat(File2)
 ```
 
-## read in ground truth cell label (this is optional)
+## read in ground truth cell labels (this is optional)
 ```
 File1T = "../Data/Human&Mouse_Pancreas/pancreas_human.CellLabels.txt"
 Test1.ReadTurth(File1T, 0, 1)
@@ -54,7 +54,7 @@ File2T = "../Data/Human&Mouse_Pancreas/pancreas_mouse.CellLabels.txt"
 Test2.ReadTurth(File2T, 0, 1)
 ```
 
-## Normlize counts data, find highly vaiable genes, and natural logarithm of one plus of the counts data
+## normlize counts data, find highly vaiable genes, and natural logarithm of one plus of the counts data
 ```
 Test1.Normalized_per_Cell()
 Test1.FindHVG()
@@ -65,7 +65,7 @@ Test2.FindHVG()
 Test2.Log1P()
 ```
 
-## Combine datasets and set number of supercells for each dataset
+## combine datasets and set number of supercells for each dataset
 ```
 NumSuperCell_Test1 = 50
 NumSuperCell_Test2 = 50
@@ -74,33 +74,33 @@ MSingle.MultiDefineSuperCell(NumSuperCell_Test1,NumSuperCell_Test2)
 ```
 In this example, we define 50 supercells for each dataset.
 
-## Compute co-membership graph within each dataset and similarity matrix across dataset
+## compute co-membership graph within each dataset and similarity matrix across dataset
 ```
 MSingle.ConstructWithinSimiarlityMat_SuperCellLevel()
 MSingle.ConstructBetweenSimiarlityMat_SuperCellLevel()
 ```
 
-## Run joint partition 
+## run joint partition 
 ```
 Estimate_NumCluster = 10 # initial guess of number of corresponding clusters, do not need to be accurate!!!
 MSingle.SDP_NKcut(Estimate_NumCluster)
 ```
-Estimate_NumCluster is the initial guess of the number of sub-populations you want to find and it is just an approxiamtion.
+```Estimate_NumCluster``` is the initial guess of the number of sub-populations you want to find and it is just an approxiamtion.
 
-## Rounding the results
+## rounding the results
 ```
 NumCluster_Min = 3 
 NumCluster_Max = 20
 CResult = MSingle.NKcut_Rounding(NumCluster_Min, NumCluster_Max)
 ```
-scPopCorn will screen number of clusters from NumCluster_Min to NumCluster_Max and automatically find the best number of clusters in [NumCluster_Min, NumCluster_Max]
+scPopCorn will screen number of clusters from ```NumCluster_Min``` to ```NumCluster_Max``` and automatically find the best number of clusters in ```[NumCluster_Min, NumCluster_Max]```
 
-## Evaluation of clustering results using ground truth (this is optional)
+## evaluate of clustering results using ground truth (this is optional)
 ```
 MSingle.Evaluation(CResult)
 ```
 
-## Similairty between cell subpopulations across datasets
+## similairty between cell subpopulations across datasets
 ```
 MSingle.StatResult()
 ```
@@ -114,7 +114,7 @@ MSingle.Umap_Result()
 ```
 MSingle.OutputResult("TestOut.txt")
 ```
-output results in the "TestOut.txt" file.
+Output results in the "TestOut.txt" file.
 
 
 # Examples and reproducible results 
