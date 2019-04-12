@@ -1,4 +1,4 @@
-# PopCorn
+# scPopCorn
 A python tool to do comparative analysis of mulitple single cell datasets.
 
 # Installation
