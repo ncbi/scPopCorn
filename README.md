@@ -7,7 +7,7 @@ $ pip install scpopcorn
 ```
 
 # Input scRNA-seq Data File Format
-PopCorn needs multiple single cell RNA-seq dataset as inputs. Bascially, the format look like the following. Example data file can be found in the ```Data``` folder.
+scPopCorn needs multiple single cell RNA-seq dataset as inputs. Bascially, the format looks like the following. Example data files can be found in the ```Data``` folder.
 
 | Cell1ID | Cell2ID | Cell3ID | Cell4ID | Cell5ID  | ... |
 |----|--------|--------|--------|---------|-----|
