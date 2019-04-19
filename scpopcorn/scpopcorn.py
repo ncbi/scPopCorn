@@ -560,11 +560,11 @@ class SingleCellData():
         SCLabel_Uids = np.unique(SCLabel)
         self.CLLabel = np.zeros(self.NumCell)
         for i in range(SCLabel_Uids.size):
-            SCIdList = np.where(SCLabel == i)[0]
+            SCIdList = np.where(SCLabel == SCLabel_Uids[i])[0]
             TmpList = list()
             for j in SCIdList:
                 TmpList.extend(self.SuperCluster[j])
-            self.CLLabel[TmpList] = i
+            self.CLLabel[TmpList] = SCLabel_Uids[i]
         return self.CLLabel
     
     
