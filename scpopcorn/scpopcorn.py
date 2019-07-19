@@ -947,6 +947,51 @@ class MergeSingleCell:
         PMatAll = self.ModularityMat_Between_SuperCell + labmda*self.ModularityMat_Within_SuperCell
         self.PMat = PMatAll
         self.SDPResult = ADMM_Modulaity_SDP(PMatAll)
+    
+    def Deep_Partition(self, clusterid, K, Lambda=1.0):
+        Id1 = np.where(self.ClusterResult==clusterid)[0]
+        Id1grid = np.ix_(Id1,Id1)
+        MatC_Sub = Mat_Center[Id1grid]
+        MatB_Sub = Mat_Between[Id1grid]
+        
+        LW = MatC_Sub
+        LW_LapMat, LW_Dvec = Sym_LapMat(LW)
+        LB = MatB_Sub
+        LB_LapMat, LB_Dvec = Sym_LapMat(LB)
+        
+        self.DeepP_Cid = clusterid
+        self.DeepP = SDPMerge(LW_LapMat, LB_LapMat, LW_Dvec, LB_Dvec, K, Lambda)
+        return self.DeepP
+    
+    def SDP_Deep_Rounding(self, Kmin, Kmax):
+        BestK = self.SelectBestK(self.DeepP, Kmin, Kmax)
+        optSC = -1.
+        for i in range(100):
+            print("#########")
+            kmeans = KMeans(n_clusters=BestK).fit(self.DeepP)#REX#Xc+Yc
+            SingleCLabel = kmeans.labels_
+            
+            SCt = silhouette_score(self.DeepP,kmeans.labels_)
+            print(SCt)
+            if SCt > optSC:
+                optSC = SCt
+                optSCRES = SingleCLabel
+        
+        self.Deep_Part = optSCRES
+    return optSCRES
+    
+    def Merge_Deep_Partition(self):
+        Id1 = np.where(self.ClusterResult== self.DeepP_Cid)[0]
+        self.ClusterResult[Id1] = self.Deep_Part + 1000
+        UniqId = np.unique(self.ClusterResult)
+        UMap = {}
+        for i in range(len(UniqId)):
+            UMap[UniqId[i]] = i
+        
+        # reorder
+        for i in range(len(self.ClusterResult)):
+            self.ClusterResult[i] = UMap[self.ClusterResult[i]]
+        return self.ClusterResult
         
     def RoundingSDP_Modularity(self, NComClust):
         optimalobj = 0.
@@ -1150,9 +1195,9 @@ class MergeSingleCell:
                 Tmp = "Cluster" + str(int(j))
                 LengendTmp = LengendTmp + (Tmp,)
             axes[i].legend(LengendTmp)
-    
+
         plt.show()
-            
+        return axes
     
     
     def OutputResult(self, Filename):
