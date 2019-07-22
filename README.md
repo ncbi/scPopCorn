@@ -110,7 +110,20 @@ MSingle.StatResult()
 MSingle.Umap_Result()
 ```
 
-## 3.12 ouptput the results
+## 3.12 ScPopCorn for sub-clusters
+After see the Umap plot, you may want to further joint partition a sub-cluster. You can do something as following 
+```
+ClusterID = 0
+NumCluster = 3
+MSingle.Deep_Partition(ClusterID, NumCluster) # deep partition for cluster 0 into 3 clusters
+NumCluster_Min = 3
+NumCluster_Max = 5
+MSingle.SDP_Deep_Rounding(NumCluster_Min, NumCluster_Max) # find out best number of clusters for the deep partition
+MSingle.Merge_Deep_Partition() # merge the new partitions to the original one
+MSingle.Umap_Result() # see the new results
+```
+
+## 3.13 ouptput the results
 ```
 MSingle.OutputResult("TestOut.txt")
 ```
