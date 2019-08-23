@@ -952,8 +952,8 @@ class MergeSingleCell:
     def Deep_Partition(self, clusterid, K, Lambda=1.0):
         Id1 = np.where(self.ClusterResult==clusterid)[0]
         Id1grid = np.ix_(Id1,Id1)
-        MatC_Sub = Mat_Center[Id1grid]
-        MatB_Sub = Mat_Between[Id1grid]
+        MatC_Sub = self.WSCN_Within_SuperCell[Id1grid]
+        MatB_Sub = self.BMat_Between_SuperCell[Id1grid]
         
         LW = MatC_Sub
         LW_LapMat, LW_Dvec = Sym_LapMat(LW)
