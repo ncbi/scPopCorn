@@ -1190,7 +1190,7 @@ class MergeSingleCell:
             Umap= self.MSinglCell[i].scRNAseq_HVGData_log1p.obsm['X_umap']
             LengendTmp = tuple()
             for j in ulabel:
-                axes[i].scatter(Umap[label==j,0], Umap[label==j,1],color = colors.to_rgba(Uid2Color[j]), label=j, **args)
+                axes[i].scatter(Umap[label==j,0], Umap[label==j,1],color = colors.to_rgba(Uid2Color[j]), label=j)#, **args
                 axes[i].set_title(Title)
                 Tmp = "Cluster" + str(int(j))
                 LengendTmp = LengendTmp + (Tmp,)
