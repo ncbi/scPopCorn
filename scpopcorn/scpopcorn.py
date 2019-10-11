@@ -979,7 +979,7 @@ class MergeSingleCell:
                 optSCRES = SingleCLabel
         
         self.Deep_Part = optSCRES
-    return optSCRES
+        return optSCRES
     
     def Merge_Deep_Partition(self):
         Id1 = np.where(self.ClusterResult== self.DeepP_Cid)[0]
