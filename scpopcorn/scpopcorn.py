@@ -1163,7 +1163,7 @@ class MergeSingleCell:
             newlabel.extend([Map[i]])
         return np.array(newlabel)
 
-    def Umap_Result(self, Colors = ColorsG, args):
+    def Umap_Result(self, Colors = ColorsG, args*):
 
 
         AllLabel = list()
