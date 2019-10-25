@@ -72,7 +72,7 @@ NumSuperCell_Test2 = 50
 MSingle = MergeSingleCell(Test1, Test2)
 MSingle.MultiDefineSuperCell(NumSuperCell_Test1,NumSuperCell_Test2)
 ```
-In this example, we define 50 supercells for each dataset. The number of super cell can be chosen as following. If you have N cells, then you can define the number of super cell M, by letting N/M around 20-30. 
+In this example, we define 50 supercells for each dataset. The number of super cell can be chosen as following. If you have N cells, then you can define the number of super cell M, by letting N/M around [20, 30]. 
 
 ## 3.6 compute co-membership graph within each dataset and similarity matrix across dataset
 ```
